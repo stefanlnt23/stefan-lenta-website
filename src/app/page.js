@@ -7,7 +7,7 @@ export default function Home() {
       <h1 className={styles.title}>Welcome to Our Complex Website</h1>
       <p className={styles.description}>
         This is the home page of our complex website built with React, Next.js, and CSS.
-        We're ready for future expansions and additions of many pages.
+        We&apos;re ready for future expansions and additions of many pages.
       </p>
       <div className={styles.grid}>
         <div className={styles.card}>
