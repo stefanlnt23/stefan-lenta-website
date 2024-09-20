@@ -1,34 +1,78 @@
+/* Navbar.module.css */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #1a1a1a;
-}
-
-.logo a {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
-}
-
-.navLinks {
-  display: flex;
-  list-style-type: none;
-}
-
-.navLinks li {
-  margin-left: 1.5rem;
-}
-
-.navLinks a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  font-size: 1.1rem;
-}
-
-.navLinks a:hover {
-  color: #00ffff;
-}
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  
+  .logo a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #00fffc, #fc00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .navLinks {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .navLinks li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 0.5rem 0;
+  }
+  
+  .navLinks li a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #00fffc, #fc00ff);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+  
+  .navLinks li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .navLinks {
+      margin-top: 1rem;
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .navLinks li {
+      width: 100%;
+      text-align: center;
+      padding: 0.5rem 0;
+    }
+  }
