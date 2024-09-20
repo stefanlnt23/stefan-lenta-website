@@ -1,0 +1,45 @@
+/* FuturisticButton.module.css */
+.futuristicButton {
+    position: relative;
+    padding: 10px 20px;
+    background: transparent;
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .buttonText {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .buttonGlow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(0, 255, 255, 0.3) 0%,
+      transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .futuristicButton:hover {
+    color: #000000;
+    background: #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  }
+  
+  .futuristicButton:hover .buttonGlow {
+    opacity: 1;
+  }
